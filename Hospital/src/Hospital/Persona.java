@@ -11,14 +11,14 @@ package Hospital;
  */
 public class Persona extends Thread {
 
-    private String id_persona;
+    private String idPersona;
     private int origen;
     private int destino;
     private String sentido;
     private Hospital hospital;
 
     public Persona(String num_persona, Hospital hospital) {
-        this.id_persona = "P" + num_persona;
+        this.idPersona = "P" + num_persona;
         this.hospital = hospital;
         this.origen = (int) (20 * Math.random());
         this.destino = (int) (20 * Math.random());
@@ -34,21 +34,21 @@ public class Persona extends Thread {
     }
 
     /**
-     * Get the value of id_persona
+     * Get the value of idPersona
      *
-     * @return the value of id_persona
+     * @return the value of idPersona
      */
-    public String getId_persona() {
-        return id_persona;
+    public String getIdPersona() {
+        return idPersona;
     }
 
     /**
-     * Set the value of id_persona
+     * Set the value of idPersona
      *
-     * @param id_persona new value of id_persona
+     * @param idPersona new value of idPersona
      */
-    public void setId_persona(String id_persona) {
-        this.id_persona = id_persona;
+    public void setIdPersona(String idPersona) {
+        this.idPersona = idPersona;
     }
 
     /**
@@ -123,4 +123,8 @@ public class Persona extends Thread {
         this.hospital = hospital;
     }
 
+    @Override
+    public void run() {
+
+    }
 }

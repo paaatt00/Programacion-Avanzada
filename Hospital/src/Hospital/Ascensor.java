@@ -12,40 +12,40 @@ import java.util.ArrayList;
  * @author Patricia
  */
 public class Ascensor extends Thread {
-
-    private int id_ascensor;
+    
+    private int idAscensor;
     private String estado;
     private int capacidad;
     private int n_personas;
-    private int planta_actual;
-    private ArrayList<Integer> plantas_pendientes;
+    private int plantaActual;
+    private ArrayList<Integer> plantasPendientes;
     private Hospital hospital;
-
+    
     public Ascensor(int id_ascensor, Hospital hospital) {
-        this.id_ascensor = id_ascensor;
+        this.idAscensor = id_ascensor;
         this.estado = "P";
         this.capacidad = 8;
         this.n_personas = 0;
-        this.planta_actual = 0;
+        this.plantaActual = 0;
         this.hospital = hospital;
     }
 
     /**
-     * Get the value of id_ascensor
+     * Get the value of idAscensor
      *
-     * @return the value of id_ascensor
+     * @return the value of idAscensor
      */
-    public int getId_ascensor() {
-        return id_ascensor;
+    public int getIdAscensor() {
+        return idAscensor;
     }
 
     /**
-     * Set the value of id_ascensor
+     * Set the value of idAscensor
      *
-     * @param id_ascensor new value of id_ascensor
+     * @param idAscensor new value of idAscensor
      */
-    public void setId_ascensor(int id_ascensor) {
-        this.id_ascensor = id_ascensor;
+    public void setIdAscensor(int idAscensor) {
+        this.idAscensor = idAscensor;
     }
 
     /**
@@ -103,39 +103,39 @@ public class Ascensor extends Thread {
     }
 
     /**
-     * Get the value of planta_actual
+     * Get the value of plantaActual
      *
-     * @return the value of planta_actual
+     * @return the value of plantaActual
      */
-    public int getPlanta_actual() {
-        return planta_actual;
+    public int getPlantaActual() {
+        return plantaActual;
     }
 
     /**
-     * Set the value of planta_actual
+     * Set the value of plantaActual
      *
-     * @param planta_actual new value of planta_actual
+     * @param plantaActual new value of plantaActual
      */
-    public void setPlanta_actual(int planta_actual) {
-        this.planta_actual = planta_actual;
+    public void setPlantaActual(int plantaActual) {
+        this.plantaActual = plantaActual;
     }
 
     /**
-     * Get the value of plantas_pendientes
+     * Get the value of plantasPendientes
      *
-     * @return the value of plantas_pendientes
+     * @return the value of plantasPendientes
      */
-    public ArrayList<Integer> getPlantas_pendientes() {
-        return plantas_pendientes;
+    public ArrayList<Integer> getPlantasPendientes() {
+        return plantasPendientes;
     }
 
     /**
-     * Set the value of plantas_pendientes
+     * Set the value of plantasPendientes
      *
-     * @param plantas_pendientes new value of plantas_pendientes
+     * @param plantasPendientes new value of plantasPendientes
      */
-    public void setPlantas_pendientes(ArrayList<Integer> plantas_pendientes) {
-        this.plantas_pendientes = plantas_pendientes;
+    public void setPlantasPendientes(ArrayList<Integer> plantasPendientes) {
+        this.plantasPendientes = plantasPendientes;
     }
 
     /**
@@ -155,5 +155,17 @@ public class Ascensor extends Thread {
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }
-
+    
+    @Override
+    public void run() {
+        hospital.ascArranca(this);
+        while (hospital.abierto()) {
+            while (estado != "E") {
+                hospital.funcionamientoAsc(this);
+            }
+            if (estado == "E") {
+                hospital.ascArranca(this);
+            }
+        }
+    }
 }
