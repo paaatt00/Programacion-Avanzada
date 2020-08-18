@@ -1,5 +1,7 @@
 package Hospital;
 
+import java.util.Random;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,26 +13,18 @@ package Hospital;
  */
 public class Persona extends Thread {
 
-    private String idPersona;
+    private int idPersona;
     private int origen;
     private int destino;
-    private String sentido;
     private Hospital hospital;
 
-    public Persona(String num_persona, Hospital hospital) {
-        this.idPersona = "P" + num_persona;
+    public Persona(int num_persona, Hospital hospital, int origen) {
+        this.idPersona = num_persona;
         this.hospital = hospital;
-        this.origen = (int) (20 * Math.random());
-        this.destino = (int) (20 * Math.random());
-        while (origen == destino) {
-            destino = (int) (20 * Math.random());
-        }
-        //sentido
-        if ((origen - destino) > 0) {
-            sentido = "B";
-        } else {
-            sentido = "S";
-        }
+        this.origen = origen;
+        do {
+            this.destino = new Random().nextInt(21);
+        } while (origen == destino);
     }
 
     /**
@@ -38,7 +32,7 @@ public class Persona extends Thread {
      *
      * @return the value of idPersona
      */
-    public String getIdPersona() {
+    public int getIdPersona() {
         return idPersona;
     }
 
@@ -47,7 +41,7 @@ public class Persona extends Thread {
      *
      * @param idPersona new value of idPersona
      */
-    public void setIdPersona(String idPersona) {
+    public void setIdPersona(int idPersona) {
         this.idPersona = idPersona;
     }
 
@@ -85,24 +79,6 @@ public class Persona extends Thread {
      */
     public void setDestino(int destino) {
         this.destino = destino;
-    }
-
-    /**
-     * Get the value of sentido
-     *
-     * @return the value of sentido
-     */
-    public String getSentido() {
-        return sentido;
-    }
-
-    /**
-     * Set the value of sentido
-     *
-     * @param sentido new value of sentido
-     */
-    public void setSentido(String sentido) {
-        this.sentido = sentido;
     }
 
     /**

@@ -16,18 +16,16 @@ public class Ascensor extends Thread {
     private int idAscensor;
     private String estado;
     private int capacidad;
-    private int n_personas;
+    private int n_personas; //personas dentro del ascensor
     private int plantaActual;
     private ArrayList<Integer> plantasPendientes;
-    private Hospital hospital;
     
-    public Ascensor(int id_ascensor, Hospital hospital) {
+    public Ascensor(int id_ascensor) {
         this.idAscensor = id_ascensor;
         this.estado = "P";
         this.capacidad = 8;
         this.n_personas = 0;
         this.plantaActual = 0;
-        this.hospital = hospital;
     }
 
     /**
@@ -137,35 +135,9 @@ public class Ascensor extends Thread {
     public void setPlantasPendientes(ArrayList<Integer> plantasPendientes) {
         this.plantasPendientes = plantasPendientes;
     }
-
-    /**
-     * Get the value of hospital
-     *
-     * @return the value of hospital
-     */
-    public Hospital getHospital() {
-        return hospital;
-    }
-
-    /**
-     * Set the value of hospital
-     *
-     * @param hospital new value of hospital
-     */
-    public void setHospital(Hospital hospital) {
-        this.hospital = hospital;
-    }
     
     @Override
     public void run() {
-        hospital.ascArranca(this);
-        while (hospital.abierto()) {
-            while (estado != "E") {
-                hospital.funcionamientoAsc(this);
-            }
-            if (estado == "E") {
-                hospital.ascArranca(this);
-            }
-        }
+        
     }
 }

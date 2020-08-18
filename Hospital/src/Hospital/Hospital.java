@@ -18,22 +18,33 @@ public class Hospital {
 
     private int num_mov;
     private int cont_mov;
-    private int numAscActivos;
+    private int n_plantas = 20;
+    private int n_ascensores = 3;
     private ArrayList<Integer> llamadaAscensores; //guarda desde donde llaman al ascensor
-    private ArrayList<ArrayList<Persona>> plantasHospital; //lista de plantas con la lista de pesonas que están cada planta
-    private Lock cerrojoPlanta = new ReentrantLock();
-    private Lock cerrojoLLamadaAscensor = new ReentrantLock();
-    private Lock cerrojoArranqueAscensor = new ReentrantLock();
-    private Condition ascensorActivo;
-    private Condition ascensorNoActivo;
+    private Planta plantasHospital[] = new Planta[n_plantas + 1]; //lista de plantas con la lista de pesonas que están cada planta
+    private Ascensor ascensores[] = new Ascensor[n_ascensores];
+    //private Lock cerrojoPlanta = new ReentrantLock();
+    //private Lock cerrojoLLamadaAscensor = new ReentrantLock();
+    //private Lock cerrojoArranqueAscensor = new ReentrantLock();
+    //private Condition ascensorActivo;
+    //private Condition ascensorNoActivo;
 
     public Hospital() {
         this.num_mov = 5000;
         this.cont_mov = 0;
-        ArrayList<Persona> planta = new ArrayList<>();
-        for (int i = 0; i < 22; i++) {
-            plantasHospital.add(planta);
+        for (int i = 0; i < n_plantas + 1; i++) {
+            plantasHospital[i] = new Planta(i);
         }
+        
+        for (int i = 0; i < n_ascensores; i++) {
+            ascensores[i] = new Ascensor(i);
+        }
+        /*
+        ascensores[0] = new Ascensor(1, 3);
+        ascensores[1] = new Ascensor(2, 5);
+        ascensores[2] = new Ascensor(3, 8);
+        */
+        imprimir();
     }
 
     /**
@@ -83,7 +94,6 @@ public class Hospital {
      * @param p
      */
     public void llegarHospital(Persona p) {
-        asignarPlanta(p);
         pulsarBoton(p);
     }
 
@@ -91,21 +101,8 @@ public class Hospital {
      *
      * @param p
      */
-    private void asignarPlanta(Persona p) {
-        cerrojoPlanta.lock();
-        try {
-            plantasHospital.get(p.getOrigen()).add(p);
-        } finally {
-            cerrojoPlanta.lock();
-        }
-    }
-
-    /**
-     *
-     * @param p
-     */
     private void pulsarBoton(Persona p) {
-        cerrojoLLamadaAscensor.lock();
+        /*cerrojoLLamadaAscensor.lock();
         try {
             int contador = 0;
             for (int i = 0; i < llamadaAscensores.size(); i++) {
@@ -119,6 +116,7 @@ public class Hospital {
         } finally {
             cerrojoLLamadaAscensor.lock();
         }
+         */
     }
 
     /**
@@ -128,7 +126,7 @@ public class Hospital {
      * @param a
      */
     public void ascArranca(Ascensor a) {
-        cerrojoArranqueAscensor.lock();
+        /*cerrojoArranqueAscensor.lock();
         try {
             //ya hay dos ascensores activos
             while (numAscActivos == 2) {
@@ -142,7 +140,7 @@ public class Hospital {
             ascensorNoActivo.signal(); //activo = true
         } finally {
             cerrojoArranqueAscensor.unlock();
-        }
+        }*/
     }
 
     /**
@@ -170,4 +168,27 @@ public class Hospital {
         }
     }
 
+    public void imprimir() {
+        System.out.println("Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3");
+        for (int i = 0; i < n_plantas + 1; i++) {
+            System.out.print(" ");
+            if (plantasHospital[i].getIdPlanta() < 10) {
+                System.out.print(" ");
+            }
+            System.out.print(plantasHospital[i].getIdPlanta() + "      ");
+            for (int j = 0; j < 3; j++) {
+                if (ascensores[j].getPlantaActual() == plantasHospital[i].getIdPlanta()) {
+                    if (ascensores[j].getEstado() == "E") {
+                        System.out.print(" E ");
+                    } else {
+                        System.out.print(ascensores[j].getEstado() + "#" + ascensores[j].getN_personas());
+                    }
+                } else {
+                    System.out.print(" | ");
+                }
+                System.out.print("      ");
+            }
+            System.out.println("");
+        }
+    }
 }
