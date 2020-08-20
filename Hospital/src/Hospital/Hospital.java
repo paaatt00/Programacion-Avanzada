@@ -35,7 +35,7 @@ public class Hospital {
         for (int i = 0; i < n_plantas + 1; i++) {
             plantasHospital[i] = new Planta(i);
         }
-        
+
         for (int i = 0; i < n_ascensores; i++) {
             ascensores[i] = new Ascensor(i);
         }
@@ -43,33 +43,18 @@ public class Hospital {
         ascensores[0] = new Ascensor(1, 3);
         ascensores[1] = new Ascensor(2, 5);
         ascensores[2] = new Ascensor(3, 8);
-        */
+         */
         imprimir();
     }
 
-    /**
-     * Get the value of num_mov
-     *
-     * @return the value of num_mov
-     */
     public int getNum_mov() {
         return num_mov;
     }
 
-    /**
-     * Get the value of cont_mov
-     *
-     * @return the value of cont_mov
-     */
     public int getCont_mov() {
         return cont_mov;
     }
 
-    /**
-     * Set the value of cont_mov
-     *
-     * @param cont_mov new value of cont_mov
-     */
     public void setCont_mov(int cont_mov) {
         this.cont_mov = cont_mov;
     }
@@ -170,7 +155,7 @@ public class Hospital {
 
     public void imprimir() {
         System.out.println("Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3");
-        for (int i = 0; i < n_plantas + 1; i++) {
+        for (int i = n_plantas; i >= 0; i--) {
             System.out.print(" ");
             if (plantasHospital[i].getIdPlanta() < 10) {
                 System.out.print(" ");
@@ -188,6 +173,40 @@ public class Hospital {
                 }
                 System.out.print("      ");
             }
+            if (plantasHospital[i].isBotonPulsado() == true) {
+                System.out.print("     Sí");
+            } else {
+                System.out.print("     No");
+            }
+            System.out.print("          ");
+            for (int j = 0; j < n_ascensores; j++) {
+                ArrayList<Persona> personasAsc = new ArrayList<Persona>();
+                for (int k = 0; k < ascensores[j].getPersonasDentro().size(); k++) {
+                    if (ascensores[j].getPersonasDentro().get(k).getDestino() == i) {
+                        personasAsc.add(ascensores[j].getPersonasDentro().get(k));
+                    }
+                }
+                int n_espacios = 7;
+                if (personasAsc.size() > 1) {
+                    n_espacios = Math.max((14 - (personasAsc.size() * String.valueOf(ascensores[j].getPersonasDentro().get(0).getIdPersona()).length() + (personasAsc.size() - 1) * 2)) / 2, 0);
+                } else if (personasAsc.size() == 1) {
+                    n_espacios = (14 - personasAsc.size() * String.valueOf(ascensores[j].getPersonasDentro().get(0).getIdPersona()).length()) / 2;
+                }
+                for (int k = 0; k < n_espacios; k++) {
+                    System.out.print(" ");
+                }
+                for (int k = 0; k < personasAsc.size(); k++) {
+                    System.out.print("P" + personasAsc.get(k).getIdPersona());
+                    if (personasAsc.size() - 1 != k) {
+                        System.out.print(", ");
+                    }
+                }
+                for (int k = 0; k < n_espacios; k++) {
+                    System.out.print(" ");
+                }
+                System.out.print("    ");
+            }
+
             System.out.println("");
         }
     }

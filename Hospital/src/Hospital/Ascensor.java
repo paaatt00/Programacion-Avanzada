@@ -18,7 +18,7 @@ public class Ascensor extends Thread {
     private int capacidad;
     private int n_personas; //personas dentro del ascensor
     private int plantaActual;
-    private ArrayList<Integer> plantasPendientes;
+    private ArrayList<Persona> personasDentro;
     
     public Ascensor(int id_ascensor) {
         this.idAscensor = id_ascensor;
@@ -26,114 +26,51 @@ public class Ascensor extends Thread {
         this.capacidad = 8;
         this.n_personas = 0;
         this.plantaActual = 0;
+        this.personasDentro = new ArrayList<Persona>(); 
     }
 
-    /**
-     * Get the value of idAscensor
-     *
-     * @return the value of idAscensor
-     */
     public int getIdAscensor() {
         return idAscensor;
     }
 
-    /**
-     * Set the value of idAscensor
-     *
-     * @param idAscensor new value of idAscensor
-     */
     public void setIdAscensor(int idAscensor) {
         this.idAscensor = idAscensor;
     }
 
-    /**
-     * Get the value of estado
-     *
-     * @return the value of estado
-     */
     public String getEstado() {
         return estado;
     }
 
-    /**
-     * Set the value of estado
-     *
-     * @param estado new value of estado
-     */
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    /**
-     * Get the value of capacidad
-     *
-     * @return the value of capacidad
-     */
     public int getCapacidad() {
         return capacidad;
     }
 
-    /**
-     * Set the value of capacidad
-     *
-     * @param capacidad new value of capacidad
-     */
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
     }
 
-    /**
-     * Get the value of n_personas
-     *
-     * @return the value of n_personas
-     */
     public int getN_personas() {
         return n_personas;
     }
 
-    /**
-     * Set the value of n_personas
-     *
-     * @param n_personas new value of n_personas
-     */
     public void setN_personas(int n_personas) {
         this.n_personas = n_personas;
     }
 
-    /**
-     * Get the value of plantaActual
-     *
-     * @return the value of plantaActual
-     */
     public int getPlantaActual() {
         return plantaActual;
     }
 
-    /**
-     * Set the value of plantaActual
-     *
-     * @param plantaActual new value of plantaActual
-     */
     public void setPlantaActual(int plantaActual) {
         this.plantaActual = plantaActual;
     }
 
-    /**
-     * Get the value of plantasPendientes
-     *
-     * @return the value of plantasPendientes
-     */
-    public ArrayList<Integer> getPlantasPendientes() {
-        return plantasPendientes;
-    }
-
-    /**
-     * Set the value of plantasPendientes
-     *
-     * @param plantasPendientes new value of plantasPendientes
-     */
-    public void setPlantasPendientes(ArrayList<Integer> plantasPendientes) {
-        this.plantasPendientes = plantasPendientes;
+    public ArrayList<Persona> getPersonasDentro() {
+        return personasDentro;
     }
     
     @Override

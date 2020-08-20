@@ -20,26 +20,25 @@ public class Planta {
     public Planta(int idPlanta) {
         this.idPlanta = idPlanta;
         this.botonPulsado = false;
+        this.personas = new ArrayList<Persona>();
     }
 
     public int getIdPlanta() {
         return idPlanta;
     }
 
-    /**
-     * Get the value of personas
-     *
-     * @return the value of personas
-     */
+    public boolean isBotonPulsado() {
+        return botonPulsado;
+    }
+
+    public void setBotonPulsado(boolean botonPulsado) {
+        this.botonPulsado = botonPulsado;
+    }
+
     public ArrayList<Persona> getPersonas() {
         return personas;
     }
 
-    /**
-     * Set the value of personas
-     *
-     * @param personas new value of personas
-     */
     public void setPersonas(ArrayList<Persona> personas) {
         this.personas = personas;
     }

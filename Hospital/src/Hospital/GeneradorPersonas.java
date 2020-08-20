@@ -11,6 +11,8 @@ package Hospital;
  */
 public class GeneradorPersonas extends Thread{
     
+    
+    
     @Override
     public void run() {
         
