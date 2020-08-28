@@ -1,8 +1,6 @@
 package Hospital;
 
 import java.util.ArrayList;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /*
@@ -16,26 +14,18 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Hospital {
 
-    private int num_mov;
-    private int cont_mov;
     private int n_plantas = 20;
     private int n_ascensores = 3;
+    private int movAscensor = 0;
     private ArrayList<Integer> llamadaAscensores; //guarda desde donde llaman al ascensor
     private Planta plantasHospital[] = new Planta[n_plantas + 1]; //lista de plantas con la lista de pesonas que están cada planta
     private Ascensor ascensores[] = new Ascensor[n_ascensores];
-    //private Lock cerrojoPlanta = new ReentrantLock();
-    //private Lock cerrojoLLamadaAscensor = new ReentrantLock();
-    //private Lock cerrojoArranqueAscensor = new ReentrantLock();
-    //private Condition ascensorActivo;
-    //private Condition ascensorNoActivo;
+    private ReentrantLock lockMovAscensor = new ReentrantLock();
 
     public Hospital() {
-        this.num_mov = 5000;
-        this.cont_mov = 0;
         for (int i = 0; i < n_plantas + 1; i++) {
             plantasHospital[i] = new Planta(i);
         }
-
         for (int i = 0; i < n_ascensores; i++) {
             ascensores[i] = new Ascensor(i);
         }
@@ -47,123 +37,68 @@ public class Hospital {
         imprimir();
     }
 
-    public int getNum_mov() {
-        return num_mov;
+    public int getMovAscensor() {
+        int m;
+        lockMovAscensor.lock();
+        try {
+            m = movAscensor;
+        } finally {
+            lockMovAscensor.unlock();
+        }
+        return m;
     }
 
-    public int getCont_mov() {
-        return cont_mov;
-    }
-
-    public void setCont_mov(int cont_mov) {
-        this.cont_mov = cont_mov;
-    }
-
-    public boolean abierto() {
-        if (cont_mov >= num_mov) {
-            return false;
-        } else {
-            return true;
+    public void anadirMovAscensor() {
+        lockMovAscensor.lock();
+        try {
+            movAscensor = movAscensor++;
+        } finally {
+            lockMovAscensor.unlock();
         }
     }
 
-    /**
-     * mucho texto
-     */
-    public void gestionHospital() {
-
+    public Ascensor[] getAscensores() {
+        return ascensores;
     }
 
-    /**
-     *
-     * @param p
-     */
-    public void llegarHospital(Persona p) {
-        pulsarBoton(p);
+    public Planta[] getPlantasHospital() {
+        return plantasHospital;
     }
-
-    /**
-     *
-     * @param p
-     */
-    private void pulsarBoton(Persona p) {
-        /*cerrojoLLamadaAscensor.lock();
-        try {
-            int contador = 0;
-            for (int i = 0; i < llamadaAscensores.size(); i++) {
-                if (llamadaAscensores.get(i) == p.getDestino()) {
-                    contador++;
+    
+    //cada vez que se llegue a la planta más alta o más baja el ascensor tiene que modificar el valor de las variables de la planta más alta y más baja
+    public synchronized void pulsarBoton(int idPlanta) {
+        plantasHospital[idPlanta].setBotonPulsado(true);
+        for (int i = 0; i < n_ascensores; i++) {
+            if (ascensores[i].getEstado().equals("P")) {
+                if (ascensores[i].getPlantaActual() > idPlanta) {
+                    ascensores[i].setEstado("B");
+                } else if (ascensores[i].getPlantaActual() < idPlanta) {
+                    ascensores[i].setEstado("S");
                 }
             }
-            if (contador == 0) { //no está pulsado el boton
-                llamadaAscensores.add(p.getDestino());
-            }
-        } finally {
-            cerrojoLLamadaAscensor.lock();
         }
-         */
     }
 
-    /**
-     * Función que arranca el ascensor, si no puede se queda a la espera
-     * mediante await.
-     *
-     * @param a
-     */
-    public void ascArranca(Ascensor a) {
-        /*cerrojoArranqueAscensor.lock();
-        try {
-            //ya hay dos ascensores activos
-            while (numAscActivos == 2) {
-                try {
-                    ascensorActivo.await(); //activo = false
-                } catch (InterruptedException e) {
-                    System.out.println("Error en arranque");
-                }
-            }
-            numAscActivos++;
-            ascensorNoActivo.signal(); //activo = true
-        } finally {
-            cerrojoArranqueAscensor.unlock();
-        }*/
-    }
-
-    /**
-     * Función para el funcionamiento del ascensor y todo lo que tiene que hacer
-     *
-     * @param a
-     */
-    public void funcionamientoAsc(Ascensor a) {
-
-    }
-
-    public void pasarPorPlantas(Ascensor a) {
-        if (a.getEstado() == "S") {
-            if (a.getPlantaActual() != 20) { //en lugar de 20 habría que poner el máximo de la lista de plantas pendientes
-                //planta++
-            } else {
-                a.setEstado("B");
-            }
-        } else if (a.getEstado() == "B") {
-            if (a.getPlantaActual() != 0) { //en lugar de 0 habría que poner el mínimo de la lista de plantas pendientes
-                //planta--
-            } else {
-                a.setEstado("S");
+    public int comprobarAscensor(int idPlanta) { //utilizar locks
+        for (int i = 0; i < n_ascensores; i++) {
+            if (ascensores[i].getPlantaActual() == idPlanta) {
+                return i;
             }
         }
+        return -1;
     }
 
     public void imprimir() {
-        System.out.println("Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3");
+        System.out.println("Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta");
         for (int i = n_plantas; i >= 0; i--) {
             System.out.print(" ");
             if (plantasHospital[i].getIdPlanta() < 10) {
                 System.out.print(" ");
             }
             System.out.print(plantasHospital[i].getIdPlanta() + "      ");
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < n_ascensores; j++) {
                 if (ascensores[j].getPlantaActual() == plantasHospital[i].getIdPlanta()) {
-                    if (ascensores[j].getEstado() == "E") {
+                    if (ascensores[j].getEstado().equals("E")) {
                         System.out.print(" E ");
                     } else {
                         System.out.print(ascensores[j].getEstado() + "#" + ascensores[j].getN_personas());
@@ -180,7 +115,7 @@ public class Hospital {
             }
             System.out.print("          ");
             for (int j = 0; j < n_ascensores; j++) {
-                ArrayList<Persona> personasAsc = new ArrayList<Persona>();
+                ArrayList<Persona> personasAsc = new ArrayList<>();
                 for (int k = 0; k < ascensores[j].getPersonasDentro().size(); k++) {
                     if (ascensores[j].getPersonasDentro().get(k).getDestino() == i) {
                         personasAsc.add(ascensores[j].getPersonasDentro().get(k));
@@ -206,7 +141,12 @@ public class Hospital {
                 }
                 System.out.print("    ");
             }
-
+            for (int j = 0; j < plantasHospital[i].getPersonas().size(); j++) {
+                System.out.print("P" + plantasHospital[i].getPersonas().get(j).getIdPersona());
+                if (plantasHospital[i].getPersonas().size() - 1 != j) {
+                    System.out.print(", ");
+                }
+            }
             System.out.println("");
         }
     }

@@ -6,16 +6,19 @@
 package Hospital;
 
 import java.util.ArrayList;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  *
  * @author Patricia
  */
 public class Planta {
-    
+
     private int idPlanta;
     private boolean botonPulsado;
     private ArrayList<Persona> personas;
+    private ReentrantLock lockBotonPulsado = new ReentrantLock();
+    private ReentrantLock lockPersonas = new ReentrantLock();
 
     public Planta(int idPlanta) {
         this.idPlanta = idPlanta;
@@ -28,18 +31,52 @@ public class Planta {
     }
 
     public boolean isBotonPulsado() {
-        return botonPulsado;
+        boolean boton;
+        lockBotonPulsado.lock();
+        try {
+            boton = botonPulsado;
+        } finally {
+            lockBotonPulsado.unlock();
+        }
+        return boton;
     }
 
     public void setBotonPulsado(boolean botonPulsado) {
-        this.botonPulsado = botonPulsado;
+        lockBotonPulsado.lock();
+        try {
+            this.botonPulsado = botonPulsado;
+        } finally {
+            lockBotonPulsado.unlock();
+        }
     }
 
     public ArrayList<Persona> getPersonas() {
         return personas;
     }
 
-    public void setPersonas(ArrayList<Persona> personas) {
-        this.personas = personas;
+    public void anadirPersona(Persona p) {
+        lockPersonas.lock();
+        try {
+            personas.add(p);
+        } finally {
+            lockPersonas.unlock();
+        }
+    }
+
+    public Persona eliminarPersona(int id) {
+        Persona p = null;
+        lockPersonas.lock();
+        try {
+            for (int i = 0; i < personas.size(); i++) {
+                if (personas.get(i).getIdPersona() == id) {
+                    p = personas.get(i);
+                    personas.remove(i);
+                    break;
+                }
+            }
+        } finally {
+            lockPersonas.unlock();
+        }
+        return p;
     }
 }

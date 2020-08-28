@@ -18,6 +18,8 @@ public class Main {
     public static void main(String[] args) {
         
         Hospital hospital = new Hospital();
+        GeneradorPersonas generador = new GeneradorPersonas(hospital);
+        generador.start();
     }
     
 }
