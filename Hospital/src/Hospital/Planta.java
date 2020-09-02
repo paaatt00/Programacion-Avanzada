@@ -51,7 +51,14 @@ public class Planta {
     }
 
     public ArrayList<Persona> getPersonas() {
-        return personas;
+        ArrayList<Persona> p;
+        lockPersonas.lock();
+        try {
+            p = personas;
+        } finally {
+            lockPersonas.unlock();
+        }
+        return p;
     }
 
     public void anadirPersona(Persona p) {

@@ -1,6 +1,7 @@
 package Hospital;
 
 import java.util.Random;
+import java.util.concurrent.locks.ReentrantLock;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,7 +17,9 @@ public class Persona extends Thread {
     private int idPersona;
     private int origen;
     private int destino;
+    private boolean enAscensor = false;
     private Hospital hospital;
+    private ReentrantLock lock = new ReentrantLock();
 
     public Persona(int num_persona, int origen, Hospital hospital) {
         this.idPersona = num_persona;
@@ -26,34 +29,61 @@ public class Persona extends Thread {
         } while (origen == destino);
         this.hospital = hospital;
     }
+    
+    public Persona(int num_persona, int origen, int destino, Hospital hospital) {
+        this.idPersona = num_persona;
+        this.origen = origen;
+        this.destino = destino;
+        this.hospital = hospital;
+    }
 
-    public int getIdPersona() {
+    public synchronized int getIdPersona() {
         return idPersona;
     }
 
-    public int getOrigen() {
+    public synchronized int getOrigen() {
         return origen;
     }
 
-    public int getDestino() {
+    public void setOrigen(int origen) {
+        this.origen = origen;
+    }
+
+    public synchronized int getDestino() {
         return destino;
     }
 
+    public boolean isEnAscensor() {
+        boolean b;
+        lock.lock();
+        try {
+            b = enAscensor;
+        } finally {
+            lock.unlock();
+        }
+        return b;
+    }
+
+    public void setEnAscensor(boolean enAscensor) {
+        lock.lock();
+        try {
+            this.enAscensor = enAscensor;
+        } finally {
+            lock.unlock();
+        }
+    } 
+
     @Override
     public void run() {
-        int asc = hospital.comprobarAscensor(origen);
-        String sentido;
-        if (origen < destino) {
-            sentido = "S";
-        } else {
-            sentido = "B";
-        }
-        while (!(asc != -1 && hospital.getAscensores()[asc].getN_personas() < hospital.getAscensores()[asc].getCapacidad() 
-                && (hospital.getAscensores()[asc].getEstado().equals("P") || hospital.getAscensores()[asc].getEstado().equals(sentido)))) {
-            if (!hospital.getPlantasHospital()[origen].isBotonPulsado()) {
-                hospital.pulsarBoton(origen);
+        while (!isEnAscensor()) {
+            try {
+                if (!hospital.getPlantasHospital()[origen].isBotonPulsado()) {
+                    hospital.pulsarBoton(origen);
+                }
+                sleep(100);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
-            asc = hospital.comprobarAscensor(origen);
         }
     }
 }

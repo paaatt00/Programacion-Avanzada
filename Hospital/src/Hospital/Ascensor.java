@@ -3,8 +3,6 @@ package Hospital;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,31 +19,53 @@ public class Ascensor extends Thread {
     private String estado;
     private int capacidad;
     private int plantaActual;
+    private boolean esperando;
+    private Hospital hospital;
     private ArrayList<Persona> personasDentro;
     private ReentrantLock lockPersonas = new ReentrantLock();
     private ReentrantLock lockPlanta = new ReentrantLock();
+    private ReentrantLock lockEstado = new ReentrantLock();
+    private ReentrantLock lockEsperando = new ReentrantLock();
 
-    public Ascensor(int id_ascensor) {
+    public Ascensor(int id_ascensor, boolean esperando, Hospital hospital) {
         this.idAscensor = id_ascensor;
         this.estado = "P";
         this.capacidad = 8;
-        this.plantaActual = 0;
+        this.plantaActual = new Random().nextInt(hospital.getPlantasHospital().length);
+        this.esperando = esperando;
+        this.hospital = hospital;
         this.personasDentro = new ArrayList<>();
     }
 
+    public int getIdAscensor() {
+        return idAscensor;
+    }
+
     public String getEstado() {
-        return estado;
+        String s;
+        lockEstado.lock();
+        try {
+            s = estado;
+        } finally {
+            lockEstado.unlock();
+        }
+        return s;
     }
 
     public void setEstado(String estado) {
-        this.estado = estado;
+        lockEstado.lock();
+        try {
+            this.estado = estado;
+        } finally {
+            lockEstado.unlock();
+        }
     }
 
     public int getCapacidad() {
         return capacidad;
     }
 
-    public int getN_personas() {
+    public int getN_Personas() {
         int n;
         lockPersonas.lock();
         try {
@@ -76,6 +96,26 @@ public class Ascensor extends Thread {
         }
     }
 
+    public boolean isEsperando() {
+        boolean e;
+        lockEsperando.lock();
+        try {
+            e = esperando;
+        } finally {
+            lockEsperando.unlock();
+        }
+        return e;
+    }
+
+    public void setEsperando(boolean esperando) {
+        lockEsperando.lock();
+        try {
+            this.esperando = esperando;
+        } finally {
+            lockEsperando.unlock();
+        }
+    }
+
     public ArrayList<Persona> getPersonasDentro() {
         return personasDentro;
     }
@@ -83,6 +123,7 @@ public class Ascensor extends Thread {
     public void anadirPersona(Persona p) {
         lockPersonas.lock();
         try {
+            p.setEnAscensor(true);
             personasDentro.add(p);
         } finally {
             lockPersonas.unlock();
@@ -106,29 +147,151 @@ public class Ascensor extends Thread {
         return p;
     }
 
+    public synchronized void entrarAscensor() {
+        for (int i = 0; i < hospital.getPlantasHospital()[getPlantaActual()].getPersonas().size(); i++) {
+            if (getN_Personas() < capacidad) {
+                if (hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getOrigen() < hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getDestino()) { //subir
+                    if (estado.equals("S")) {
+                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getIdPersona()));
+                    } else if (estado.equals("P") || getN_Personas() == 0) {
+                        setEstado("S");
+                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getIdPersona()));
+                    }
+                } else { //bajar
+                    if (estado.equals("B")) {
+                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getIdPersona()));
+                    } else if (estado.equals("P") || getN_Personas() == 0) {
+                        setEstado("B");
+                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getIdPersona()));
+                    }
+                }
+            }
+        }
+        hospital.getPlantasHospital()[getPlantaActual()].setBotonPulsado(false);
+    }
+
+    public void salirAscensor() {
+        int shift = 0;
+        int x = personasDentro.size();
+        for (int i = 0; i < x; i++) {
+            if (personasDentro.get(i - shift).getDestino() == plantaActual) {
+                eliminarPersona(personasDentro.get(i - shift).getIdPersona());
+                shift++;
+            }
+        }
+    }
+
+    public void sacarAscensor() {
+        int shift = 0;
+        int x = personasDentro.size();
+        for (int i = 0; i < x; i++) {
+            Persona p = eliminarPersona(personasDentro.get(i - shift).getIdPersona());
+            Persona p_new = new Persona(p.getIdPersona(), p.getOrigen(), p.getDestino(), hospital);
+            hospital.getPlantasHospital()[plantaActual].anadirPersona(p_new);
+            p_new.start();
+            shift++;
+        }
+    }
+
+    private void comprobarSiguienteEstado() {
+        ArrayList<Integer> botones = hospital.botonesPulsados();
+        switch (estado) {
+            case "P":
+                if (isEsperando()) {
+                    setEstado("P");
+                } else {
+                    if (botones.isEmpty()) {
+                        setEstado("P");
+                    } else if (botones.size() == 1) {
+                        if (botones.get(0) > getPlantaActual()) {
+                            setEstado("S");
+                        } else {
+                            setEstado("B");
+                        }
+                    } else {
+                        int p = hospital.getPlantasHospital().length * 3;
+                        int d = hospital.getPlantasHospital().length + 1;
+                        for (int i = 0; i < botones.size(); i++) {
+                            int d_aux = Math.abs(plantaActual - botones.get(i));
+                            if (d > d_aux) {
+                                d = d_aux;
+                                p = botones.get(i);
+                            }
+                        }
+                        if (p > getPlantaActual()) {
+                            setEstado("S");
+                        } else {
+                            setEstado("B");
+                        }
+                    }
+                }
+                break;
+            case "S":
+                if (getN_Personas() == 0) {
+                    setEstado("P");
+                } else {
+                    setEstado("S");
+                }
+                break;
+            case "B":
+                if (getN_Personas() == 0) {
+                    setEstado("P");
+                } else {
+                    setEstado("B");
+                }
+                break;
+        }
+    }
+
     @Override
     public void run() {
-        switch (estado) {
-            case "P": //cuando el ascensor está vacío y no ha recibido ninguna llamada
-                //uwu
-                break;
-            case "S": //cuando sube
-                plantaActual++;
-                break;
-            case "B": //cuando baja 
-                plantaActual--;
-                break;
-            case "E": 
-                //sacar personas del ascensor
-                //mover personas a la planta
-                try {
-                sleep(new Random().nextInt(5000) + 10000);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+        while (hospital.getMovAscensor() < (hospital.getMax_movimientos() - 1)) {
+            switch (estado) {
+                case "P":
+                    if(!isEsperando()){
+                        salirAscensor();
+                        entrarAscensor();
+                    }
+                    try {
+                        sleep(100);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                case "S": 
+                    try {
+                        sleep(500);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    setPlantaActual(getPlantaActual() + 1);
+                    salirAscensor();
+                    entrarAscensor();
+                    hospital.anadirMovAscensor();
+                    break;
+                case "B": 
+                    try {
+                        sleep(500);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    setPlantaActual(getPlantaActual() - 1);
+                    salirAscensor();
+                    entrarAscensor();
+                    hospital.anadirMovAscensor();
+                    break;
+                case "E":
+                    salirAscensor(); //pq puede que haya personas que se quieran bajar en la planta digo yo
+                    sacarAscensor();
+                    try {
+                        sleep(new Random().nextInt(5001) + 10000);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    this.setEstado("P");
+                    break;
             }
-
-            break;
-
+            comprobarSiguienteEstado();
         }
     }
 }

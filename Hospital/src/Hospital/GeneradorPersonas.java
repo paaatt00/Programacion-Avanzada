@@ -24,10 +24,15 @@ public class GeneradorPersonas extends Thread {
         for (int i = 0; i < 6000; i++) {
             int origen = new Random().nextInt(21);
             Persona p = new Persona(i, origen, hospital);
+            p.start();
+            hospital.getPlantasHospital()[origen].anadirPersona(p);
             try {
                 sleep(new Random().nextInt(1501) + 500);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
+            }
+            if (hospital.getMovAscensor() >= hospital.getMax_movimientos()) {
+                break;
             }
         }
     }
