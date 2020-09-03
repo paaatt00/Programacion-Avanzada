@@ -20,13 +20,15 @@ public class Hospital {
     private int n_plantas = 20;
     private int n_ascensores = 3;
     private int movAscensor = 0;
-    private int max_movimientos = 200;
+    private int max_movimientos = 1000;
     private Planta plantasHospital[] = new Planta[n_plantas + 1]; //lista de plantas con la lista de pesonas que están cada planta
     private Ascensor ascensores[] = new Ascensor[n_ascensores];
     private ReentrantLock lockMovAscensor = new ReentrantLock();
     private ReentrantLock lockTxt = new ReentrantLock();
+    private ReentrantLock lockEvacuacion = new ReentrantLock();
     private FileWriter archivo;
-    BufferedWriter bw;
+    private BufferedWriter bw;
+    private boolean esEvacuado = false;
 
     public Hospital() throws IOException {
         for (int i = 0; i < n_plantas + 1; i++) {
@@ -80,6 +82,26 @@ public class Hospital {
     public synchronized Planta[] getPlantasHospital() {
         return plantasHospital;
     }
+
+    public boolean isEsEvacuado() {
+        boolean e;
+        lockEvacuacion.lock();
+        try {
+            e = esEvacuado;
+        } finally {
+            lockEvacuacion.unlock();
+        }
+        return e;
+    }
+
+    public void setEsEvacuado(boolean esEvacuado) {
+        lockEvacuacion.lock();
+        try {
+            this.esEvacuado = esEvacuado;
+        } finally {
+            lockEvacuacion.unlock();
+        }
+    }
     
     public void cerrar() {
         lockTxt.lock();
@@ -109,6 +131,28 @@ public class Hospital {
             }
         }
         return botones;
+    }
+    
+    public void evacuacion() {
+        setEsEvacuado(true);
+        for (int i = 0; i < n_plantas; i++) {
+            for (int j = 0; j < plantasHospital[i].getPersonas().size(); j++) {
+                plantasHospital[i].getPersonas().get(j).setDestino(0);
+                if (i == 0) {
+                    plantasHospital[i].getPersonas().get(j).setEnAscensor(true);
+                }
+            }
+        }
+        plantasHospital[0].eliminarPersonas();
+    }
+    
+    public boolean ascensoresVacios() {
+        for (int i = 0; i < n_ascensores; i++) {
+            if (!ascensores[i].getPersonasDentro().isEmpty()) {
+                return false;
+            }
+        }
+        return true;
     }
     
     public void imprimir() {

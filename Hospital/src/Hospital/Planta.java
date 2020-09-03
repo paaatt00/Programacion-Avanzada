@@ -86,4 +86,13 @@ public class Planta {
         }
         return p;
     }
+    
+    public void eliminarPersonas() {
+        lockPersonas.lock();
+        try {
+            personas = new ArrayList<Persona>();
+        } finally {
+            lockPersonas.unlock();
+        }
+    }
 }

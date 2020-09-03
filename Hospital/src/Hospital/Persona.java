@@ -19,7 +19,8 @@ public class Persona extends Thread {
     private int destino;
     private boolean enAscensor = false;
     private Hospital hospital;
-    private ReentrantLock lock = new ReentrantLock();
+    private ReentrantLock lockEnAscensor = new ReentrantLock();
+    private ReentrantLock lockDestino = new ReentrantLock();
 
     public Persona(int num_persona, int origen, Hospital hospital) {
         this.idPersona = num_persona;
@@ -49,27 +50,43 @@ public class Persona extends Thread {
         this.origen = origen;
     }
 
-    public synchronized int getDestino() {
-        return destino;
+    public int getDestino() {
+        int d;
+        lockDestino.lock();
+        try {
+            d = destino;
+        } finally {
+            lockDestino.unlock();
+        }
+        return d;
     }
 
+    public void setDestino(int destino) {
+        lockDestino.lock();
+        try {
+            this.destino = destino;
+        } finally {
+            lockDestino.unlock();
+        }
+    }
+    
     public boolean isEnAscensor() {
         boolean b;
-        lock.lock();
+        lockEnAscensor.lock();
         try {
             b = enAscensor;
         } finally {
-            lock.unlock();
+            lockEnAscensor.unlock();
         }
         return b;
     }
 
     public void setEnAscensor(boolean enAscensor) {
-        lock.lock();
+        lockEnAscensor.lock();
         try {
             this.enAscensor = enAscensor;
         } finally {
-            lock.unlock();
+            lockEnAscensor.unlock();
         }
     } 
 

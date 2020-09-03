@@ -5,14 +5,11 @@
  */
 package Hospital;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.util.Random;
 
 /**
  *
- * @author patri
+ * @author Patricia
  */
 public class Rompedor extends Thread {
 
@@ -35,7 +32,7 @@ public class Rompedor extends Thread {
     
     @Override
     public void run() {
-        while (hospital.getMovAscensor() < hospital.getMax_movimientos()) {
+        while (hospital.getMovAscensor() < hospital.getMax_movimientos() && !(hospital.isEsEvacuado() && hospital.botonesPulsados().isEmpty() && hospital.ascensoresVacios())) {
             try {
                 sleep(new Random().nextInt(10001) + 20000);
             } catch (Exception e) {

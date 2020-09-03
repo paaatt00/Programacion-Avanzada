@@ -31,7 +31,7 @@ public class GeneradorPersonas extends Thread {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-            if (hospital.getMovAscensor() >= hospital.getMax_movimientos()) {
+            if (hospital.getMovAscensor() >= hospital.getMax_movimientos() || hospital.isEsEvacuado()) {
                 break;
             }
         }

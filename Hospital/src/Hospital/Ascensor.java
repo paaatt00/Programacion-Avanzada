@@ -148,23 +148,26 @@ public class Ascensor extends Thread {
     }
 
     public synchronized void entrarAscensor() {
-        for (int i = 0; i < hospital.getPlantasHospital()[getPlantaActual()].getPersonas().size(); i++) {
-            if (getN_Personas() < capacidad) {
-                if (hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getOrigen() < hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getDestino()) { //subir
+        int size = hospital.getPlantasHospital()[getPlantaActual()].getPersonas().size();
+        int shift = 0;
+        for (int i = 0; i < size; i++) {
+            if (getN_Personas() < capacidad && (i - shift) >= 0) {
+                if (hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i - shift).getOrigen() < hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i - shift).getDestino()) { //subir
                     if (estado.equals("S")) {
-                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getIdPersona()));
+                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i - shift).getIdPersona()));
                     } else if (estado.equals("P") || getN_Personas() == 0) {
                         setEstado("S");
-                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getIdPersona()));
+                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i - shift).getIdPersona()));
                     }
                 } else { //bajar
                     if (estado.equals("B")) {
-                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getIdPersona()));
+                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i - shift).getIdPersona()));
                     } else if (estado.equals("P") || getN_Personas() == 0) {
                         setEstado("B");
-                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i).getIdPersona()));
+                        anadirPersona(hospital.getPlantasHospital()[getPlantaActual()].eliminarPersona(hospital.getPlantasHospital()[getPlantaActual()].getPersonas().get(i - shift).getIdPersona()));
                     }
                 }
+                shift++;
             }
         }
         hospital.getPlantasHospital()[getPlantaActual()].setBotonPulsado(false);
@@ -186,7 +189,13 @@ public class Ascensor extends Thread {
         int x = personasDentro.size();
         for (int i = 0; i < x; i++) {
             Persona p = eliminarPersona(personasDentro.get(i - shift).getIdPersona());
-            Persona p_new = new Persona(p.getIdPersona(), p.getOrigen(), p.getDestino(), hospital);
+            int destino;
+            if (hospital.isEsEvacuado()) {
+                destino = 0;
+            } else {
+                destino = p.getDestino();
+            }
+            Persona p_new = new Persona(p.getIdPersona(), getPlantaActual(), destino, hospital);
             hospital.getPlantasHospital()[plantaActual].anadirPersona(p_new);
             p_new.start();
             shift++;
@@ -245,7 +254,7 @@ public class Ascensor extends Thread {
 
     @Override
     public void run() {
-        while (hospital.getMovAscensor() < (hospital.getMax_movimientos() - 1)) {
+        while ((hospital.getMovAscensor() < (hospital.getMax_movimientos() - 1)) && !(hospital.isEsEvacuado() && hospital.botonesPulsados().isEmpty() && this.getN_Personas() == 0)) {
             switch (estado) {
                 case "P":
                     if(!isEsperando()){
