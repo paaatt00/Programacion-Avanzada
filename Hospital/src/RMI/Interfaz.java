@@ -15,4 +15,6 @@ import java.rmi.RemoteException;
 public interface Interfaz extends Remote {
     
     boolean evacuacion() throws RemoteException;
+    
+    String vigilante() throws RemoteException;
 }

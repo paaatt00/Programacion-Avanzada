@@ -51,7 +51,7 @@ public class Hospital {
     public synchronized int getMax_movimientos() {
         return max_movimientos;
     }
-    
+
     public int getMovAscensor() {
         int m;
         lockMovAscensor.lock();
@@ -63,13 +63,13 @@ public class Hospital {
         return m;
     }
 
-    public void anadirMovAscensor(){
+    public void anadirMovAscensor() {
         lockMovAscensor.lock();
         try {
             movAscensor++;
             imprimir();
-        } catch(Exception e) {
-            System.out.println(e.getMessage());  
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         } finally {
             lockMovAscensor.unlock();
         }
@@ -102,7 +102,7 @@ public class Hospital {
             lockEvacuacion.unlock();
         }
     }
-    
+
     public void cerrar() {
         lockTxt.lock();
         try {
@@ -122,7 +122,7 @@ public class Hospital {
     public synchronized void pulsarBoton(int idPlanta) {
         plantasHospital[idPlanta].setBotonPulsado(true);
     }
-    
+
     public ArrayList<Integer> botonesPulsados() {
         ArrayList<Integer> botones = new ArrayList<>();
         for (int i = 0; i < n_plantas + 1; i++) {
@@ -132,7 +132,7 @@ public class Hospital {
         }
         return botones;
     }
-    
+
     public void evacuacion() {
         setEsEvacuado(true);
         for (int i = 0; i < n_plantas; i++) {
@@ -145,7 +145,39 @@ public class Hospital {
         }
         plantasHospital[0].eliminarPersonas();
     }
-    
+
+    public String vigilancia() {
+        String x = "";
+        //System.out.println("______________________________MODULO VIGILANTE____________________________________");
+        x = x + "______________________________MODULO VIGILANTE____________________________________\n";
+        for (int i = 0; i < n_ascensores; i++) {
+            //System.out.println("ASCENSOR: " + getAscensores()[i].getIdAscensor() + " - Estado: " + getAscensores()[i].getEstado() + " - Nº personas: " + getAscensores()[i].getN_Personas() + " - * Planta Actual * - " + getAscensores()[i].getPlantaActual());
+            x = x + "ASCENSOR: " + getAscensores()[i].getIdAscensor() + " - Estado: " + getAscensores()[i].getEstado() + " - Nº personas: " + getAscensores()[i].getN_Personas() + " - * Planta Actual * - " + getAscensores()[i].getPlantaActual() + "\n";
+            //System.out.println("// PERSONAS DENTRO ");
+            x = x + "// PERSONAS DENTRO \n";
+            for (int j = 0; j < getAscensores()[i].getPersonasDentro().size(); j++) {
+                //System.out.println(getAscensores()[i].getPersonasDentro().get(j).getIdPersona() + " - Origen: " + getAscensores()[i].getPersonasDentro().get(j).getOrigen() + " - Destino: " + getAscensores()[i].getPersonasDentro().get(j).getDestino());
+                x = x + getAscensores()[i].getPersonasDentro().get(j).getIdPersona() + " - Origen: " + getAscensores()[i].getPersonasDentro().get(j).getOrigen() + " - Destino: " + getAscensores()[i].getPersonasDentro().get(j).getDestino() + "\n";
+            }
+            //System.out.println("-------------------------------------");
+            x = x + "-------------------------------------\n";
+        }
+        for (int i = n_plantas; i >= 0; i--) { //recorremos al reves
+            //System.out.println("-|-|-|- " + i + " -|-|-|-");
+            x = x + "-|-|-|- " + i + " -|-|-|-\n";
+            for (int j = 0; j < getPlantasHospital()[i].getPersonas().size(); j++) {
+                Persona p = getPlantasHospital()[i].getPersonas().get(j);
+                //System.out.println(p.getIdPersona() + " - Origen: " + p.getOrigen() + " - Destino: " + p.getDestino());
+                x = x + p.getIdPersona() + " - Origen: " + p.getOrigen() + " - Destino: " + p.getDestino() + "\n";
+            }
+            //System.out.println("");
+            x = x + "\n";
+        }
+        //System.out.println("________________________________________________________________________________________________________\n");
+        x = x + "________________________________________________________________________________________________________\n\n";
+        return x;
+    }
+
     public boolean ascensoresVacios() {
         for (int i = 0; i < n_ascensores; i++) {
             if (!ascensores[i].getPersonasDentro().isEmpty()) {
@@ -154,7 +186,7 @@ public class Hospital {
         }
         return true;
     }
-    
+
     public void imprimir() {
         lockTxt.lock();
         try {

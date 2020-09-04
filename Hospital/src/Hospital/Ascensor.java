@@ -29,7 +29,7 @@ public class Ascensor extends Thread {
 
     public Ascensor(int id_ascensor, boolean esperando, Hospital hospital) {
         this.idAscensor = id_ascensor;
-        this.estado = "P";
+        this.estado = "P";  
         this.capacidad = 8;
         this.plantaActual = new Random().nextInt(hospital.getPlantasHospital().length);
         this.esperando = esperando;
@@ -262,7 +262,7 @@ public class Ascensor extends Thread {
                         entrarAscensor();
                     }
                     try {
-                        sleep(100);
+                        sleep(10);
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
