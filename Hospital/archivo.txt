@@ -8,19 +8,19 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  15       |        |        |            No                                                                  
  14       |        |        |            No                                                                  
  13       |        |        |            No                                                                  
- 12       |       P#0       |            No                                                                  
+ 12       |        |        |            No                                                                  
  11       |        |        |            No                                                                  
  10       |        |        |            No                                                                  
   9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
+  8       |        |       P#0           No                                                                  
+  7      P#0       |        |            No                                                                  
   6       |        |        |            No                                                                  
   5       |        |        |            No                                                                  
   4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
+  3       |       P#0       |            No                                                                  
   2       |        |        |            No                                                                  
   1       |        |        |            No                                                                  
-  0      P#0       |        |            No                                                                  
+  0       |        |        |            No                                                                  
 Ascensor 1: []
 Ascensor 2: []
 Ascensor 3: []
@@ -36,17 +36,17 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  14       |        |        |            No                                                                  
  13       |        |        |            No                                                                  
  12       |        |        |            No                                                                  
- 11       |       B#0       |            No                                                                  
+ 11       |        |        |            No                                                                  
  10       |        |        |            No                                                                  
   9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
+  8       |        |       P#0           No                                                                  
   7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |          --Sí                                                                  P0
+  6      B#0       |        |            No                                                                  
+  5       |        |        |            No                                                                  
   4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1      S#0       |        |            No                                                                  
+  3       |        |        |          --Sí                                                                  P0
+  2       |       B#0       |            No                                                                  
+  1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
 Ascensor 1: []
 Ascensor 2: []
@@ -63,17 +63,17 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  14       |        |        |            No                                                                  
  13       |        |        |            No                                                                  
  12       |        |        |            No                                                                  
- 11       |       B#0       |            No                                                                  
+ 11       |        |        |            No                                                                  
  10       |        |        |            No                                                                  
   9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
+  8       |        |       P#0           No                                                                  
   7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |          --Sí                                                                  P0
+  6      B#0       |        |            No                                                                  
+  5       |        |        |            No                                                                  
   4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1      S#0       |        |            No                                                                  
+  3       |        |        |          --Sí                                                                  P0
+  2       |       P#0       |            No                                                                  
+  1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
 Ascensor 1: []
 Ascensor 2: []
@@ -88,22 +88,22 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  16       |        |        |            No                                                                  
  15       |        |        |            No                                                                  
  14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
+ 13       |        |        |            No                                  P0                              
  12       |        |        |            No                                                                  
- 11       |       B#0       |            No                                                                  
+ 11       |        |        |            No                                                                  
  10       |        |        |            No                                                                  
   9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
+  8       |        |       P#0           No                                                                  
   7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |          --Sí                                                                  P0
+  6      B#0       |        |            No                                                                  
+  5       |        |        |            No                                                                  
   4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2      S#0       |        |            No                                                                  
+  3       |       S#1       |            No                                                                  
+  2       |        |        |            No                                                                  
   1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
 Ascensor 1: []
-Ascensor 2: []
+Ascensor 2: [P0]
 Ascensor 3: []
 
 Movimiento 4:
@@ -115,22 +115,22 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  16       |        |        |            No                                                                  
  15       |        |        |            No                                                                  
  14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
+ 13       |        |        |            No                                  P0                              
  12       |        |        |            No                                                                  
  11       |        |        |            No                                                                  
- 10       |       B#0       |            No                                                                  
+ 10       |        |        |            No                                                                  
   9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
+  8       |        |       P#0           No                                                                  
   7       |        |        |            No                                                                  
   6       |        |        |            No                                                                  
-  5       |        |        |          --Sí                                                                  P0
+  5      B#0       |        |            No                                                                  
   4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2      P#0       |        |            No                                                                  
+  3       |       S#1       |            No                                                                  
+  2       |        |        |            No                                                                  
   1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
 Ascensor 1: []
-Ascensor 2: []
+Ascensor 2: [P0]
 Ascensor 3: []
 
 Movimiento 5:
@@ -142,22 +142,22 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  16       |        |        |            No                                                                  
  15       |        |        |            No                                                                  
  14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
+ 13       |        |        |            No                                  P0                              
  12       |        |        |            No                                                                  
  11       |        |        |            No                                                                  
- 10       |       B#0       |            No                                                                  
+ 10       |        |        |            No                                                                  
   9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
+  8       |        |       P#0           No                                                                  
   7       |        |        |            No                                                                  
   6       |        |        |            No                                                                  
-  5       |        |        |          --Sí                                                                  P0
-  4       |        |        |            No                                                                  
-  3      S#0       |       P#0           No                                                                  
+  5      P#0       |        |            No                                                                  
+  4       |       S#1       |            No                                                                  
+  3       |        |        |            No                                                                  
   2       |        |        |            No                                                                  
   1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
 Ascensor 1: []
-Ascensor 2: []
+Ascensor 2: [P0]
 Ascensor 3: []
 
 Movimiento 6:
@@ -167,24 +167,24 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  18       |        |        |            No                                                                  
  17       |        |        |            No                                                                  
  16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
+ 15       |        |        |          --Sí                                                                  P1
  14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
+ 13       |        |        |            No                                  P0                              
  12       |        |        |            No                                                                  
  11       |        |        |            No                                                                  
  10       |        |        |            No                                                                  
-  9       |       B#0       |            No                                                                  
-  8       |        |        |            No                                                                  
+  9       |        |        |            No                                                                  
+  8       |        |       P#0           No                                                                  
   7       |        |        |            No                                                                  
   6       |        |        |            No                                                                  
-  5       |        |        |          --Sí                                                                  P0
+  5      S#0      S#1       |            No                                                                  
   4       |        |        |            No                                                                  
-  3      P#0       |       P#0           No                                                                  
+  3       |        |        |            No                                                                  
   2       |        |        |            No                                                                  
   1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
 Ascensor 1: []
-Ascensor 2: []
+Ascensor 2: [P0]
 Ascensor 3: []
 
 Movimiento 7:
@@ -194,24 +194,24 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  18       |        |        |            No                                                                  
  17       |        |        |            No                                                                  
  16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
+ 15       |        |        |          --Sí                                                                  P1
  14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
+ 13       |        |        |            No                                  P0                              
  12       |        |        |            No                                                                  
  11       |        |        |            No                                                                  
  10       |        |        |            No                                                                  
-  9       |       B#0       |            No                                                                  
-  8       |        |        |          --Sí                                                                  P1
+  9       |        |        |            No                                                                  
+  8       |        |       P#0           No                                                                  
   7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |          --Sí                                                                  P0
-  4      S#0       |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
+  6      S#0       |        |            No                                                                  
+  5       |       S#1       |            No                                                                  
+  4       |        |        |            No                                                                  
+  3       |        |        |            No                                                                  
   2       |        |        |            No                                                                  
   1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
 Ascensor 1: []
-Ascensor 2: []
+Ascensor 2: [P0]
 Ascensor 3: []
 
 Movimiento 8:
@@ -221,24 +221,24 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  18       |        |        |            No                                                                  
  17       |        |        |            No                                                                  
  16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
+ 15       |        |        |          --Sí                                                                  P1
  14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
+ 13       |        |        |            No                                  P0                              
  12       |        |        |            No                                                                  
  11       |        |        |            No                                                                  
- 10       |        |        |            No                                  P1                              
+ 10       |        |        |            No                                                                  
   9       |        |        |            No                                                                  
-  8       |       S#1       |            No                                                                  
+  8       |        |       P#0           No                                                                  
   7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |          --Sí                                                                  P0
-  4      P#0       |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
+  6      S#0      S#1       |            No                                                                  
+  5       |        |        |            No                                                                  
+  4       |        |        |            No                                                                  
+  3       |        |        |            No                                                                  
   2       |        |        |            No                                                                  
   1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
 Ascensor 1: []
-Ascensor 2: [P1]
+Ascensor 2: [P0]
 Ascensor 3: []
 
 Movimiento 9:
@@ -248,24 +248,24 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  18       |        |        |            No                                                                  
  17       |        |        |            No                                                                  
  16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
+ 15       |        |        |          --Sí                                                                  P1
  14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
+ 13       |        |        |            No                                  P0                              
  12       |        |        |            No                                                                  
  11       |        |        |            No                                                                  
- 10       |        |        |            No                                  P1                              
-  9       |       S#1       |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |          --Sí                                                                  
+ 10       |        |        |            No                                                                  
+  9       |        |        |            No                                                                  
+  8       |        |       P#0           No                                                                  
+  7      S#0       |        |            No                                                                  
+  6       |       S#1       |            No                                                                  
+  5       |        |        |            No                                                                  
   4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
+  3       |        |        |            No                                                                  
   2       |        |        |            No                                                                  
   1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: [P1]
+Ascensor 1: []
+Ascensor 2: [P0]
 Ascensor 3: []
 
 Movimiento 10:
@@ -275,24 +275,24 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  18       |        |        |            No                                                                  
  17       |        |        |            No                                                                  
  16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
+ 15       |        |        |          --Sí                                                                  P1
  14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
+ 13       |        |        |            No                                  P0                              
  12       |        |        |            No                                                                  
  11       |        |        |            No                                                                  
- 10       |        |        |            No                                  P1                              
-  9       |       S#1       |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
+ 10       |        |        |          --Sí                                                                  P2
+  9       |        |        |            No                                                                  
+  8       |        |       P#0           No                                                                  
+  7      S#0      S#1       |            No                                                                  
   6       |        |        |            No                                                                  
-  5      S#1       |        |            No                                                                  
+  5       |        |        |            No                                                                  
   4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
+  3       |        |        |            No                                                                  
   2       |        |        |            No                                                                  
   1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: [P1]
+Ascensor 1: []
+Ascensor 2: [P0]
 Ascensor 3: []
 
 Movimiento 11:
@@ -302,24 +302,24 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  18       |        |        |            No                                                                  
  17       |        |        |            No                                                                  
  16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
+ 15       |        |        |          --Sí                                                                  P1
  14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
+ 13       |        |        |            No                                  P0                              
  12       |        |        |            No                                                                  
  11       |        |        |            No                                                                  
- 10       |       S#0       |            No                                                                  
+ 10       |        |        |          --Sí                                                                  P2
   9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
+  8      S#0       |       P#0           No                                                                  
+  7       |       S#1       |            No                                                                  
   6       |        |        |            No                                                                  
-  5      S#1       |        |            No                                                                  
+  5       |        |        |            No                                                                  
   4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
+  3       |        |        |            No                                                                  
   2       |        |        |            No                                                                  
   1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: []
+Ascensor 1: []
+Ascensor 2: [P0]
 Ascensor 3: []
 
 Movimiento 12:
@@ -329,1619 +329,27 @@ Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos
  18       |        |        |            No                                                                  
  17       |        |        |            No                                                                  
  16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
+ 15       |        |        |          --Sí                                                                  P1
  14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
+ 13       |        |        |            No                                  P0                              
  12       |        |        |            No                                                                  
  11       |        |        |            No                                                                  
- 10       |       P#0       |            No                                                                  
+ 10       |        |        |          --Sí                                                                  P2
   9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
+  8      S#0      S#1      P#0           No                                                                  
   7       |        |        |            No                                                                  
-  6      S#1       |        |            No                                                                  
+  6       |        |        |            No                                                                  
   5       |        |        |            No                                                                  
   4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
+  3       |        |        |            No                                                                  
   2       |        |        |            No                                                                  
   1       |        |        |            No                                                                  
   0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: []
+Ascensor 1: []
+Ascensor 2: [P0]
 Ascensor 3: []
 
 Movimiento 13:
 Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |       S#0       |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7      S#1       |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 14:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |       S#0       |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7      S#1       |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 15:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |       S#0       |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8      S#1       |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 16:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |       S#0       |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8      S#1       |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 17:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |       S#0       |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9      S#1       |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 18:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13       |       S#0       |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9      S#1       |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 19:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13       |       S#0       |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10      S#1       |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 20:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |       B#1       |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10      S#1       |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 21:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |       B#1       |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11      S#1       |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 22:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13       |       B#1       |            No                                                                  
- 12       |        |        |            No                                                                  
- 11      S#1       |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 23:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13       |       B#1       |            No                                                                  
- 12      S#1       |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 24:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12      S#1      B#1       |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 25:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13      S#1       |        |            No                                                                  
- 12       |       B#1       |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 26:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14       |        |        |            No                                                                  
- 13      S#1       |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |       B#1       |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |          --Sí                                                                  P4
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 27:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14      S#1       |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |       B#1       |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |          --Sí                                                                  P4
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 28:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                P0                                                
- 14      S#1       |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |       B#1       |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |          --Sí                                                                  P4
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: [P0]
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 29:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15      S#0       |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |       B#1       |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |          --Sí                                                                  P4
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: []
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 30:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15      S#0       |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |       B#1       |            No                                                                  
-  8       |        |        |          --Sí                                                                  P4
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: []
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 31:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16      S#0       |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |       B#1       |            No                                                                  
-  8       |        |        |          --Sí                                                                  P4
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                                                  
-Ascensor 1: []
-Ascensor 2: [P3]
-Ascensor 3: []
-
-Movimiento 32:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16      S#0       |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |       B#2       |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                  P4                              
-Ascensor 1: []
-Ascensor 2: [P3, P4]
-Ascensor 3: []
-
-Movimiento 33:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17      S#0       |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |       B#2       |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                  P4                              
-Ascensor 1: []
-Ascensor 2: [P3, P4]
-Ascensor 3: []
-
-Movimiento 34:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17      S#0       |        |            No                                                                  
- 16       |        |        |          --Sí                                                                  P5
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |       B#2       |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                  P4                              
-Ascensor 1: []
-Ascensor 2: [P3, P4]
-Ascensor 3: []
-
-Movimiento 35:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18      S#0       |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |          --Sí                                                                  P5
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |       B#2       |            No                                                                  
-  6       |        |        |            No                                  P3                              
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                  P4                              
-Ascensor 1: []
-Ascensor 2: [P3, P4]
-Ascensor 3: []
-
-Movimiento 36:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18      B#0       |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |          --Sí                                                                  P5
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |       B#1       |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                  P4                              
-Ascensor 1: []
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 37:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17      B#0       |        |            No                                                                  
- 16       |        |        |          --Sí                                                                  P5
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |       B#1       |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                  P4                              
-Ascensor 1: []
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 38:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17      B#0       |        |            No                                                                  
- 16       |        |        |          --Sí                                                                  P5
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |       B#1       |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                                  P4                              
-Ascensor 1: []
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 39:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16      B#1       |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |       B#1       |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                P4                              
-Ascensor 1: [P5]
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 40:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16      B#1       |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |       B#1       |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                P4                              
-Ascensor 1: [P5]
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 41:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15      B#1       |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |       B#1       |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                P4                              
-Ascensor 1: [P5]
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 42:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15      B#1       |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |       B#1      P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                P4                              
-Ascensor 1: [P5]
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 43:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14      B#1       |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |       B#1      P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                P4                              
-Ascensor 1: [P5]
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 44:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14      B#1       |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |       B#1       |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                P4                              
-Ascensor 1: [P5]
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 45:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13      B#1       |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |       B#1       |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                P4                              
-Ascensor 1: [P5]
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 46:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13      B#1       |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |       B#1       |            No                                                                  
-  0       |        |        |            No                P5                P4                              
-Ascensor 1: [P5]
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 47:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12      B#1       |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |       B#1       |            No                                                                  
-  0       |        |        |            No                P5                P4                              
-Ascensor 1: [P5]
-Ascensor 2: [P4]
-Ascensor 3: []
-
-Movimiento 48:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12      B#1       |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |       B#0       |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 49:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11      B#1       |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |       S#0       |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 50:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11      B#1       |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |       S#0       |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 51:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10      B#1       |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |       S#0       |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 52:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10      B#1       |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |       S#0       |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 53:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9      B#1       |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |       S#0       |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 54:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9      B#1       |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |       S#0      P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 55:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8      B#1       |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |       S#0      P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 56:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8      B#1       |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |       S#0       |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 57:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7      B#1       |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |       S#0       |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 58:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7      B#1       |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |       S#0       |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 59:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6      B#1       |        |            No                                                                  
-  5       |       S#0       |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 60:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6      B#1      S#0       |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 61:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |       S#0       |            No                                                                  
-  5      B#1       |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 62:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |       S#0       |            No                                                                  
-  6       |        |        |            No                                                                  
-  5      B#1       |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 63:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |       S#0       |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4      B#1       |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 64:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |       S#0       |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4      B#1       |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 65:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |       S#0       |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3      B#1       |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 66:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |       S#0       |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3      B#1       |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 67:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |       S#0       |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2      B#1       |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 68:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |       S#0       |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2      B#1       |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 69:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |        |        |            No                                                                  
- 10       |       S#0       |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1      B#1       |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 70:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |       S#0       |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1      B#1       |        |            No                                                                  
-  0       |        |        |            No                P5                                                
-Ascensor 1: [P5]
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 71:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |          --Sí                                                                  P2
- 19       |        |        |            No                                                                  
- 18       |        |        |            No                                                                  
- 17       |        |        |            No                                                                  
- 16       |        |        |            No                                                                  
- 15       |        |        |            No                                                                  
- 14       |        |        |            No                                                                  
- 13       |        |        |            No                                                                  
- 12       |        |        |            No                                                                  
- 11       |       P#0       |            No                                                                  
- 10       |        |        |            No                                                                  
-  9       |        |        |            No                                                                  
-  8       |        |        |            No                                                                  
-  7       |        |        |            No                                                                  
-  6       |        |        |            No                                                                  
-  5       |        |        |            No                                                                  
-  4       |        |        |            No                                                                  
-  3       |        |       P#0           No                                                                  
-  2       |        |        |            No                                                                  
-  1       |        |        |            No                                                                  
-  0      B#0       |        |            No                                                                  
-Ascensor 1: []
-Ascensor 2: []
-Ascensor 3: []
-
-Movimiento 72:
-Piso    Asc.1    Asc.2    Asc.3    Botón pulsado:    Destinos Asc.1    Destinos Asc.2    Destinos Asc.3    Personas planta
- 20       |        |        |      
+ 20       |        |        |            No                                                                  
+ 19       |        |        |         

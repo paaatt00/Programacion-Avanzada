@@ -24,5 +24,4 @@ public class Main {
         generador.start();
         Servidor ser = new Servidor(hospital);
     }
-
 }

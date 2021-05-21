@@ -290,7 +290,7 @@ public class Ascensor extends Thread {
                     hospital.anadirMovAscensor();
                     break;
                 case "E":
-                    salirAscensor(); //pq puede que haya personas que se quieran bajar en la planta digo yo
+                    salirAscensor();
                     sacarAscensor();
                     try {
                         sleep(new Random().nextInt(5001) + 10000);

@@ -9,7 +9,7 @@ import java.util.Random;
 
 /**
  *
- * @author Patricia
+ * @author Patricia 
  */
 public class GeneradorPersonas extends Thread {
 
